@@ -17,7 +17,7 @@ export class Snack {
             <div class="card-title snacks-fs">
               <span>${this.name} </span><span>$${this.price}</span>
             </div>
-            <button onclick="app.snacksController.buySnack('${this.name}')" class="btn btn-success">+</button>
+            <button onclick="app.moniesController.chargeMoney('${this.name}'),  app.snacksController.buySnack('${this.name}')" class="btn btn-success">+</button>
           </div>
         </div>
       </div>

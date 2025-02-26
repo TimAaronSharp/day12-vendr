@@ -22,19 +22,19 @@ export class SnacksController {
 
   }
   buySnack(snackName) {
-    const snack = AppState.snacks.find(boughtSnack => boughtSnack.name == snackName)
+    const snack = AppState.snacks.find(chosenSnack => chosenSnack.name == snackName)
     if (snack.price > AppState.money) {
-      alert('Not enough dosh, pal!')
       return
     }
 
-    if (snack.stock >= 1) {
+    if (snack.stock < 1) {
+      alert(`${snack.name} is out of stock.`)
+      return
+    } else {
       snacksService.buySnack(snack)
       AppState.boughtSnacks.push(snack)
 
       console.log(`I have bought ${AppState.boughtSnacks}`);
-    } else {
-      alert(`${snack.name} is out of stock.`)
     }
   }
   drawBoughtSnacks() {
