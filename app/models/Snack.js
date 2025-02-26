@@ -4,6 +4,8 @@ export class Snack {
     this.price = snackPrice
     this.picture = snackPicture
     this.description = snackDescription
+    this.stock = 4
+    this.maxStock = this.stock
   }
   get snackHTMLTemplate() {
     return /*html*/`

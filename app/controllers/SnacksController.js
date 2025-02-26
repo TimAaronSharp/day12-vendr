@@ -18,16 +18,23 @@ export class SnacksController {
       innerHTMLContent += snack.snackHTMLTemplate
     })
     snackElem.innerHTML = innerHTMLContent
+    console.log(snacks);
+
   }
   buySnack(snackName) {
     const snack = AppState.snacks.find(boughtSnack => boughtSnack.name == snackName)
     if (snack.price > AppState.money) {
       alert('Not enough dosh, pal!')
-    } else {
+      return
+    }
+
+    if (snack.stock >= 1) {
       snacksService.buySnack(snack)
       AppState.boughtSnacks.push(snack)
 
       console.log(`I have bought ${AppState.boughtSnacks}`);
+    } else {
+      alert(`${snack.name} is out of stock.`)
     }
   }
   drawBoughtSnacks() {
@@ -39,5 +46,9 @@ export class SnacksController {
       innerHTMLContent += boughtSnack.boughtSnackHTMLTemplate
     })
     boughtSnackElem.innerHTML = innerHTMLContent
+  }
+
+  restock() {
+    snacksService.restock()
   }
 }
