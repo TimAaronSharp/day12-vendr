@@ -25,19 +25,20 @@
 
   <main>
     <section class="container-fluid">
-      <div id="snackDisplaySection" class="row">
-        <!-- <div class="col-md-3">
-          <div class="d-flex justify-content-center">
-            <div class="card">
-              <div class="card-body">
-                <img src="${this.picture}" alt="${this.description}">
-                <div class="card-title">
-                  <span>${this.name}</span><span>${this.price}</span>
-                </div>
-              </div>
-            </div>
+      <div class="row">
+        <div class="col-md-2 offset-md-3">
+          <div>
+            <button onclick="addMoney()">Bling+</button>
           </div>
-        </div> -->
+        </div>
+        <div class="col-md-2 offset-md-3">
+          <div>
+            <span id="currentMoney">Wallet: $0.00</span>
+          </div>
+        </div>
+      </div>
+      <div id="snackDisplaySection" class="row offset-md-3">
+
       </div>
     </section>
 
@@ -63,7 +64,7 @@
 
 </html>
 
-<!-- "As a user, I should be able to see all of the snacks images and prices upon page load."
+<!-- "As a user, I should be able to see all of the snacks images and prices upon page load." -DONE
 
 "As a user, I should be able to click on a button to add money to the vending machine."
 

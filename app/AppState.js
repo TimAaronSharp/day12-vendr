@@ -3,6 +3,8 @@ import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
+  money = 0
+
   snacks = [
     new Snack('Legally Distinct Cheese Corn Chip', 1.50, '../assets/img/doritos.png', 'cheese corn chips'),
     new Snack('Legally Distinct Mini Chocolate Donuts', 2.00, '../assets/img/chocolate-donuts.png', 'mini chocolate donuts'),

@@ -7,14 +7,15 @@ export class Snack {
   }
   get snackHTMLTemplate() {
     return /*html*/`
-    <div class="col-md-3">
-      <div class="d-flex justify-content-center">
+    <div class="col-md-2 mb-2">
+      <div class="d-flex justify-content-center text-center">
         <div class="card">
           <div class="card-body">
-            <img src="${this.picture}" alt="${this.description}">
-            <div class="card-title">
-              <span>${this.name}</span><span>${this.price}</span>
+            <img src="${this.picture}" alt="${this.description}" class="snacks">
+            <div class="card-title snacks-fs">
+              <span>${this.name} </span><span>$${this.price}</span>
             </div>
+            <button onclick="buySnack()" class="btn btn-success">+</button>
           </div>
         </div>
       </div>
