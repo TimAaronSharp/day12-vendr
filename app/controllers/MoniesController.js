@@ -1,16 +1,26 @@
 import { AppState } from "../AppState.js";
+import { moniesService } from "../services/MoniesService.js";
 
 
-export class MoniesCollector {
+export class MoniesController {
   constructor() {
+    // this.drawMoney()
     AppState.on('money', this.drawMoney)
+    // console.log(`Current Money is - ${AppState.money}`);
+
   }
 
   drawMoney() {
-    const currentMoney = AppState.money
-    const currentMoneyElem = document.getElementById('currentMoney')
+    const money = AppState.money
+    const moneyElem = document.getElementById('currentMoney')
 
-    currentMoneyElem.innerHTML = `Wallet : $${currentMoney}`
+    moneyElem.innerText = `Wallet : $${money}`
+    console.log(`Current Money is - ${money}`);
+
+  }
+
+  addMoney() {
+    moniesService.addMoney()
   }
 
 
