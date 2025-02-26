@@ -26,12 +26,22 @@
   <main>
     <section class="container-fluid">
       <div class="row">
-        <div class="col-md-2 offset-md-3">
+        <div class="col-md-1 offset-md-3">
           <div>
-            <button onclick="app.moniesController.addMoney()">Bling+</button>
+            <button onclick="app.moniesController.addMoney(0.25)">+$0.25</button>
           </div>
         </div>
-        <div class="col-md-2 offset-md-3">
+        <div class="col-md-1">
+          <div>
+            <button onclick="app.moniesController.addMoney(1)">+$1.00</button>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div>
+            <button onclick="app.moniesController.addMoney(5)">+$5.00</button>
+          </div>
+        </div>
+        <div class="col-md-1 d-flex offset-md-2">
           <div>
             <span id="currentMoney">Wallet: $0.00</span>
           </div>
@@ -40,7 +50,19 @@
       <div id="snackDisplaySection" class="row offset-md-3">
 
       </div>
+      <div class="card">
+        <div class="card-title text-center">
+          <p>Bought Snacks</p>
+          <div id="boughtSnacksSection" class="row">
+
+          </div>
+        </div>
+      </div>
     </section>
+
+
+
+
 
 
   </main>

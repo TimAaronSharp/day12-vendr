@@ -22,4 +22,21 @@ export class Snack {
     </div>
     `
   }
+
+  get boughtSnackHTMLTemplate() {
+    return /*html*/`
+    <div class="col-md-2">
+      <div class="d-flex justify-content-center text-center">
+        <div class="card">
+          <div class="card-body">
+            <img src="${this.picture}" alt="${this.description}" class="snacks">
+            <div class="card-title">
+              <p>${this.name}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        `
+  }
 }

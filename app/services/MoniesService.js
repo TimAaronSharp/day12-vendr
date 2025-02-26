@@ -2,9 +2,9 @@ import { AppState } from "../AppState.js";
 
 
 class MoniesService {
-  addMoney() {
+  addMoney(moneyAmount) {
     console.log(`Money before is ${AppState.money}`);
-    AppState.money += 0.25
+    AppState.money += moneyAmount
     console.log(`Money after is ${AppState.money}`);
   }
 

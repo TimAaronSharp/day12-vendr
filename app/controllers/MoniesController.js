@@ -19,8 +19,8 @@ export class MoniesController {
 
   }
 
-  addMoney() {
-    moniesService.addMoney()
+  addMoney(moneyAmount) {
+    moniesService.addMoney(moneyAmount)
   }
 
 

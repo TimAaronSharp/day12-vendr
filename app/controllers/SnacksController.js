@@ -5,6 +5,7 @@ import { snacksService } from "../services/SnacksService.js";
 
 export class SnacksController {
   constructor() {
+    AppState.on('boughtSnacks', this.drawBoughtSnacks)
     this.drawSnacks()
   }
 
@@ -24,7 +25,19 @@ export class SnacksController {
       alert('Not enough dosh, pal!')
     } else {
       snacksService.buySnack(snack)
-    }
+      AppState.boughtSnacks.push(snack)
 
+      console.log(`I have bought ${AppState.boughtSnacks}`);
+    }
+  }
+  drawBoughtSnacks() {
+    const boughtSnacks = AppState.boughtSnacks
+    let innerHTMLContent = ''
+    const boughtSnackElem = document.getElementById('boughtSnacksSection')
+
+    boughtSnacks.forEach(boughtSnack => {
+      innerHTMLContent += boughtSnack.boughtSnackHTMLTemplate
+    })
+    boughtSnackElem.innerHTML = innerHTMLContent
   }
 }
